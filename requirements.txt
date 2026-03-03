@@ -2,7 +2,7 @@
 langchain
 langchain-openai
 langchain-core
-
+langgraph
 # Environment management
 python-dotenv
 
