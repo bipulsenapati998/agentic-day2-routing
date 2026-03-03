@@ -90,7 +90,12 @@ def main() -> None:
             "user_tier": "",
         }
     )
-    print("VIP result:", vip_result.get("user_tier"),"\n Should Escalate: ", vip_result.get("should_escalate"))
+    print(
+        "VIP result:",
+        vip_result.get("user_tier"),
+        "\nShould Escalate: ",
+        vip_result.get("should_escalate"),
+    )
 
     standard_result = graph.invoke(
         {
@@ -102,9 +107,13 @@ def main() -> None:
     )
     print(
         "Standard result:",
-        standard_result.get("user_tier"), "\n Should Escalate: ",
+        standard_result.get("user_tier"),
+        "\nShould Escalate: ",
         standard_result.get("should_escalate"),
     )
+    print(f"User Tier: {standard_result.get('user_tier')}")
+    print(f"Should Escalate: {standard_result.get('should_escalate')}")
+    print(f"Response: {standard_result['messages'][-1].content}")
 
 
 if __name__ == "__main__":
